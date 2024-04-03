@@ -14,7 +14,7 @@ class LandMarkAnalyser(
 ) : ImageAnalysis.Analyzer {
     private var frameSkipConter=0
     override fun analyze(image: ImageProxy) {
-        if(frameSkipConter%15==0) {
+        if(frameSkipConter%60==0) {
             val rotation = image.imageInfo.rotationDegrees
             val bitmap = image.toBitmap().centerCrop(321, 321)
             val result = classifier.classify(bitmap, rotation)
